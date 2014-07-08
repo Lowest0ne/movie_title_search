@@ -53,7 +53,7 @@ function titleSearch( data, status, jq )
 
   var search = data["Search"]
 
-  var result_container = createElement( 'DIV' );
+  var result_container = createElement( 'DIV', [['class','container']] );
 
   for ( var i = 0; i < search.length; ++i )
     result_container.appendChild( createMovieView( search[i] ) );
@@ -66,9 +66,9 @@ function titleSearch( data, status, jq )
 
 function createMovieView( data )
 {
-  var container = createElement( 'DIV' );
+  var container = createElement( 'DIV', [['class','thumbnail col-md-4 col-sm-6'], ['style','max-width:368px;']] );
 
-  var title = createElement( 'H3' )
+  var title = createElement( 'H3', [['style','text-align:center']] )
   title.innerHTML = data.Title;
   container.appendChild( title );
 
@@ -76,7 +76,7 @@ function createMovieView( data )
   {
     container.appendChild( createElement( 'IMG', [['src',data.Poster]]) );
 
-    var plot = createElement( 'P' );
+    var plot = createElement( 'P', [['class','caption']] );
     plot.innerHTML = data.Plot;
     container.appendChild( plot );
   });
