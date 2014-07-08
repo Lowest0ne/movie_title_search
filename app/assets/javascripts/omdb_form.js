@@ -11,9 +11,11 @@ OmdbForm.prototype.generateForm = function()
   var title_field = document.createElement( "INPUT" );
   title_field.setAttribute( 'type', 'text' );
   title_field.setAttribute( 'name', 's');
+  title_field.setAttribute( 'placeholder', 'Movie Title Search' );
 
   var submit_button = document.createElement( "INPUT" );
   submit_button.setAttribute( 'type', 'submit' );
+  submit_button.setAttribute( 'value', "Submit" );
 
   this.form = document.createElement( "FORM" );
   this.form.setAttribute( 'name', 'omdb_query' );
