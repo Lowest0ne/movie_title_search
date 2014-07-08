@@ -1,10 +1,20 @@
-Omdb = function( base_element )
+Omdb = function( query_element, result_element )
 {
+  this.query_element = query_element;
+  this.result_element = result_element;
+
   this.form = new OmdbForm( this.clicked.bind( this ) );
-  base_element.appendChild( this.form.form );
+  this.query_element.appendChild( this.form.form );
 }
 
 Omdb.prototype.clicked = function( )
 {
-  alert( this.form.response.Search );
+  this.result_element.innerHTML = '';
+
+  var search = this.form.response.Search;
+
+  if ( search )
+  {
+    this.result_element.appendChild( ( new OmdbMovies( search ) ).view );
+  }
 }
