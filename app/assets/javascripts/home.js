@@ -2,8 +2,11 @@
 $(document).ready( function(){
 
   var inputs = [
-     createElement( 'INPUT', [ ['type', 'text'] , [ 'name', 's' ] ] )
-    ,createElement( 'INPUT', [ [ 'type', 'submit' ] ] )
+     createElement( 'INPUT', [['type', 'text'], ['name', 's'], ['placeholder', 'General movie title search' ]] )
+    //,createElement( 'INPUT', [['type', 'text'], ['name', 'i'], ['placeholder', 'Imdb Movie id']])
+    //,createElement( 'INPUT', [['type', 'text'], ['name', 't'], ['placeholder', 'Find specific movie title']])
+    //,createElement( 'INPUT', [['type', 'text'], ['name', 'y'], ['placeholder', 'Find movie by year']] )
+    ,createElement( 'INPUT', [['type', 'submit' ] ] )
   ];
 
   var form = createElement( 'FORM' );
